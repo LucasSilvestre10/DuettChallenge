@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Change directory
-        run: cd BackEnd/
+        run: cd BackEnd\
 
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
