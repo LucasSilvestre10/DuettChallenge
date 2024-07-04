@@ -12,32 +12,32 @@ namespace Backend.Data
         {
             if (context.Users.Any())
             {
-                return;  
+                return;
             }
 
-            
+
             context.Users.Add(new User
             {
                 Name = "Admin",
                 Email = "admin@example.com",
-                Password = "admin@123", 
+                Password = "admin@123",
                 CPF = "12345678900",
                 Role = "Admin"
             });
 
-           
+
             context.Users.Add(new User
             {
                 Name = "User1",
                 Email = "user1@example.com",
-                Password = "user1@123", 
+                Password = "user1@123",
                 CPF = "98765432100",
                 Role = "User"
             });
 
             Random random = new Random();
 
-            for (int i = 2; i <= 50; i++)
+            for (int i = 2; i <= 10; i++)
             {
                 string roleName = random.Next(2) == 0 ? "Admin" : "User"; // Aleatoriamente escolhe entre Admin e User
                 string name = $"User{i}";
