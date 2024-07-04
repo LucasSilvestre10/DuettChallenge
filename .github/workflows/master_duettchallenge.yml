@@ -33,6 +33,7 @@ jobs:
         with:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
+          working-directory: ./back-end
 
   deploy:
     runs-on: windows-latest
@@ -52,9 +53,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_76C3931029764D84BC35C99B5DAC9F68 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4436ED96F79E47A6AFB0D066EB0F62F5 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_0019ED91A79241B0B56385BC685BF89A }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_79F57DDA6E754125A2706E35ADFE8AFD }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_93EC783D61FB4AC9BE7137E8FA5117F9 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8EA0820A0A8C40EA810311CA92189F69 }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
