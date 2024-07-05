@@ -33,15 +33,15 @@ namespace Backend.Controllers
             }
         }
 
-        //[Authorize]
-        [HttpGet]
+    [Authorize]
+    [HttpGet]
         public async Task<ActionResult<List<User>>> GetAllUsers()
         {
             var users = await _userService.GetAllUsersAsync();
             return users;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("byId/{id}")]
         public async Task<ActionResult<User>> GetUserById(int id)
         {
@@ -53,7 +53,7 @@ namespace Backend.Controllers
             return user;
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("byEmail/{email}")]
         public async Task<ActionResult<User>> GetUserByEmail(string email)
         {
@@ -66,7 +66,7 @@ namespace Backend.Controllers
         }
 
 
-        //[Authorize]
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateUser(int id, User user)
         {
@@ -86,7 +86,7 @@ namespace Backend.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(int id)
         {
