@@ -22,16 +22,14 @@ jobs:
           dotnet-version: '8.x'
           include-prerelease: true
 
-      
-
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/DuettChallenge/BackEnd
+        run: dotnet publish ./BackEnd/BackEnd.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp/BackEnd/Azure/webapps-deploy
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/DuettChallenge/BackEnd
+          path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
     runs-on: windows-latest
