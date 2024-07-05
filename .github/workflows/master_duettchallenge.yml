@@ -25,13 +25,13 @@ jobs:
       
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}\myapp\BackEnd
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/DuettChallenge/BackEnd
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}\myapp\BackEnd
+          path: ${{env.DOTNET_ROOT}}/DuettChallenge/BackEnd
 
   deploy:
     runs-on: windows-latest
